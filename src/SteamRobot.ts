@@ -7,7 +7,7 @@ import SteamMarket from 'steam-market'
 import { Account } from './types/Account'
 import { Middleware } from './types/Middleware'
 
-class SteamBot<AccountOptions = void> {
+class SteamRobot<AccountOptions = void> {
   private readonly account: Account<AccountOptions>
   private readonly middlewares: Array<Middleware<AccountOptions>> = []
 
@@ -114,4 +114,4 @@ class SteamBot<AccountOptions = void> {
   }
 }
 
-export default SteamBot
+export default SteamRobot
