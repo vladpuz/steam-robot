@@ -93,14 +93,13 @@ main()
 
 ### Middleware
 
-Ƭ **Middleware**<`AccountOptions`\>: (`steam`: [`Steam`](#interfacessteammd)
-, `account`: [`Account`](#interfacesaccountmd)<`AccountOptions`\>, `next`: () => `Promise`<`void`\>) => `Promise`<`void`
-\>
+Ƭ **Middleware
+**<`AccountOptions`\>: (`steam`: [`Steam`](#interfacessteammd), `account`: [`Account`](#interfacesaccountmd)<`AccountOptions`\>, `next`: () => `Promise`<`void`\>) => `Promise`<`void`\>
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name             | Type   |
+|:-----------------|:-------|
 | `AccountOptions` | `void` |
 
 #### Type declaration
@@ -109,11 +108,11 @@ main()
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `steam` | [`Steam`](#interfacessteammd) |
+| Name      | Type                                                 |
+|:----------|:-----------------------------------------------------|
+| `steam`   | [`Steam`](#interfacessteammd)                        |
 | `account` | [`Account`](#interfacesaccountmd)<`AccountOptions`\> |
-| `next` | () => `Promise`<`void`\> |
+| `next`    | () => `Promise`<`void`\>                             |
 
 ##### Returns
 
@@ -121,14 +120,14 @@ main()
 
 #### Defined in
 
-types/Middleware.ts:4
+[types/Middleware.ts:4](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Middleware.ts#L4)
 
 # Class: default<AccountOptions\>
 
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name             | Type   |
+|:-----------------|:-------|
 | `AccountOptions` | `void` |
 
 ## Table of contents
@@ -155,19 +154,19 @@ types/Middleware.ts:4
 
 #### Type parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name             | Type   |
+|:-----------------|:-------|
 | `AccountOptions` | `void` |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                                                 |
+|:----------|:-----------------------------------------------------|
 | `account` | [`Account`](#interfacesaccountmd)<`AccountOptions`\> |
 
 #### Defined in
 
-SteamBot.ts:14
+[SteamRobot.ts:14](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/SteamRobot.ts#L14)
 
 ## Properties
 
@@ -177,7 +176,7 @@ SteamBot.ts:14
 
 #### Defined in
 
-SteamBot.ts:11
+[SteamRobot.ts:11](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/SteamRobot.ts#L11)
 
 ___
 
@@ -187,7 +186,7 @@ ___
 
 #### Defined in
 
-SteamBot.ts:12
+[SteamRobot.ts:12](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/SteamRobot.ts#L12)
 
 ## Methods
 
@@ -197,8 +196,8 @@ SteamBot.ts:12
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name       | Type     |
+|:-----------|:---------|
 | `interval` | `number` |
 
 #### Returns
@@ -207,7 +206,7 @@ SteamBot.ts:12
 
 #### Defined in
 
-SteamBot.ts:22
+[SteamRobot.ts:22](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/SteamRobot.ts#L22)
 
 ___
 
@@ -217,8 +216,8 @@ ___
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name         | Type                                           |
+|:-------------|:-----------------------------------------------|
 | `middleware` | [`Middleware`](#middleware)<`AccountOptions`\> |
 
 #### Returns
@@ -227,14 +226,14 @@ ___
 
 #### Defined in
 
-SteamBot.ts:18
+[SteamRobot.ts:18](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/SteamRobot.ts#L18)
 
 # Interface: Account<AccountOptions\>
 
 ## Type parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name             | Type   |
+|:-----------------|:-------|
 | `AccountOptions` | `void` |
 
 ## Table of contents
@@ -257,7 +256,7 @@ SteamBot.ts:18
 
 #### Defined in
 
-types/Account.ts:7
+[types/Account.ts:7](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L7)
 
 ___
 
@@ -267,7 +266,7 @@ ___
 
 #### Defined in
 
-types/Account.ts:5
+[types/Account.ts:5](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L5)
 
 ___
 
@@ -277,7 +276,7 @@ ___
 
 #### Defined in
 
-types/Account.ts:6
+[types/Account.ts:6](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L6)
 
 ___
 
@@ -287,7 +286,7 @@ ___
 
 #### Defined in
 
-types/Account.ts:3
+[types/Account.ts:3](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L3)
 
 ___
 
@@ -297,7 +296,7 @@ ___
 
 #### Defined in
 
-types/Account.ts:8
+[types/Account.ts:8](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L8)
 
 ___
 
@@ -307,7 +306,7 @@ ___
 
 #### Defined in
 
-types/Account.ts:4
+[types/Account.ts:4](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L4)
 
 ___
 
@@ -317,7 +316,7 @@ ___
 
 #### Defined in
 
-types/Account.ts:2
+[types/Account.ts:2](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L2)
 
 # Interface: Steam
 
@@ -339,7 +338,7 @@ types/Account.ts:2
 
 #### Defined in
 
-types/Steam.ts:9
+[types/Steam.ts:9](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Steam.ts#L9)
 
 ___
 
@@ -349,7 +348,7 @@ ___
 
 #### Defined in
 
-types/Steam.ts:10
+[types/Steam.ts:10](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Steam.ts#L10)
 
 ___
 
@@ -359,7 +358,7 @@ ___
 
 #### Defined in
 
-types/Steam.ts:11
+[types/Steam.ts:11](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Steam.ts#L11)
 
 ___
 
@@ -369,7 +368,7 @@ ___
 
 #### Defined in
 
-types/Steam.ts:12
+[types/Steam.ts:12](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Steam.ts#L12)
 
 ___
 
@@ -379,4 +378,4 @@ ___
 
 #### Defined in
 
-types/Steam.ts:8
+[types/Steam.ts:8](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Steam.ts#L8)
