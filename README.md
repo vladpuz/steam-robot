@@ -11,7 +11,7 @@ npm install steam-robot
 ## Usage
 
 ```javascript
-import SteamBot from 'steam-robot'
+import SteamRobot from 'steam-robot'
 
 // Account object for creating a bot
 const account = {
@@ -30,7 +30,7 @@ const account = {
 
 // Wrapping the code in an asynchronous function to use await
 const main = async () => {
-  const bot = new SteamBot(account)
+  const bot = new SteamRobot(account)
 
   bot.use(async (steam, account, next) => {
     console.log('First middleware')
