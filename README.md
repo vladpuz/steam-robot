@@ -63,14 +63,14 @@ main()
 
 ## See also
 
-| Modules                                                                                     | Description                               | Author            |
-|---------------------------------------------------------------------------------------------|-------------------------------------------|-------------------|
-| [steam-totp](https://github.com/DoctorMcKay/node-steam-totp)                                | Generating TOTP auth codes for steam      | DoctorMcKay       |
-| [steam-user](https://github.com/DoctorMcKay/node-steam-user)                                | Interaction with the steam network        | DoctorMcKay       |
-| [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                        | Interaction with the steam community      | DoctorMcKay       |
-| [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager)    | Steam trade offer management              | DoctorMcKay       |
-| [steam-market](https://github.com/vladislav-puzyrev/steam-market)                           | Steam community market API client         | Vladislav Puzyrev |
-| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot) (YOU HERE)                  | Creating steam bots based on middlewares  | Vladislav Puzyrev |
+| Modules                                                                                  | Description                              | Author            |
+|------------------------------------------------------------------------------------------|------------------------------------------|-------------------|
+| [steam-totp](https://github.com/DoctorMcKay/node-steam-totp)                             | Generating TOTP auth codes for steam     | DoctorMcKay       |
+| [steam-user](https://github.com/DoctorMcKay/node-steam-user)                             | Interaction with the steam network       | DoctorMcKay       |
+| [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Interaction with the steam community     | DoctorMcKay       |
+| [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Steam trade offer management             | DoctorMcKay       |
+| [steam-market](https://github.com/vladislav-puzyrev/steam-market)                        | Steam community market API client        | Vladislav Puzyrev |
+| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot) (YOU HERE)               | Creating steam bots based on middlewares | Vladislav Puzyrev |
 
 # API
 
@@ -93,8 +93,8 @@ main()
 
 ### Middleware
 
-Ƭ **Middleware
-**<`AccountOptions`\>: (`steam`: [`Steam`](#interfacessteammd), `account`: [`Account`](#interfacesaccountmd)<`AccountOptions`\>, `next`: () => `Promise`<`void`\>) => `Promise`<`void`\>
+Ƭ **Middleware**<`AccountOptions`\>:
+(`steam`: [`Steam`](#interfacessteammd), `account`: [`Account`](#interfacesaccountmd)<`AccountOptions`\>, `next`: () => `Promise`<`void`\>) => `Promise`<`void`\>
 
 #### Type parameters
 
@@ -120,7 +120,7 @@ main()
 
 #### Defined in
 
-[types/Middleware.ts:4](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Middleware.ts#L4)
+[types/Middleware.ts:4](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Middleware.ts#L4)
 
 # Class: default<AccountOptions\>
 
@@ -166,7 +166,7 @@ main()
 
 #### Defined in
 
-[SteamRobot.ts:14](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/SteamRobot.ts#L14)
+[SteamRobot.ts:14](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/SteamRobot.ts#L14)
 
 ## Properties
 
@@ -176,7 +176,7 @@ main()
 
 #### Defined in
 
-[SteamRobot.ts:11](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/SteamRobot.ts#L11)
+[SteamRobot.ts:11](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/SteamRobot.ts#L11)
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 #### Defined in
 
-[SteamRobot.ts:12](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/SteamRobot.ts#L12)
+[SteamRobot.ts:12](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/SteamRobot.ts#L12)
 
 ## Methods
 
@@ -206,7 +206,7 @@ ___
 
 #### Defined in
 
-[SteamRobot.ts:22](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/SteamRobot.ts#L22)
+[SteamRobot.ts:22](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/SteamRobot.ts#L22)
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 #### Defined in
 
-[SteamRobot.ts:18](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/SteamRobot.ts#L18)
+[SteamRobot.ts:18](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/SteamRobot.ts#L18)
 
 # Interface: Account<AccountOptions\>
 
@@ -256,7 +256,7 @@ ___
 
 #### Defined in
 
-[types/Account.ts:7](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L7)
+[types/Account.ts:7](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Account.ts#L7)
 
 ___
 
@@ -266,7 +266,7 @@ ___
 
 #### Defined in
 
-[types/Account.ts:5](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L5)
+[types/Account.ts:5](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Account.ts#L5)
 
 ___
 
@@ -276,7 +276,7 @@ ___
 
 #### Defined in
 
-[types/Account.ts:6](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L6)
+[types/Account.ts:6](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Account.ts#L6)
 
 ___
 
@@ -286,7 +286,7 @@ ___
 
 #### Defined in
 
-[types/Account.ts:3](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L3)
+[types/Account.ts:3](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Account.ts#L3)
 
 ___
 
@@ -296,7 +296,7 @@ ___
 
 #### Defined in
 
-[types/Account.ts:8](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L8)
+[types/Account.ts:8](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Account.ts#L8)
 
 ___
 
@@ -306,7 +306,7 @@ ___
 
 #### Defined in
 
-[types/Account.ts:4](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L4)
+[types/Account.ts:4](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Account.ts#L4)
 
 ___
 
@@ -316,7 +316,7 @@ ___
 
 #### Defined in
 
-[types/Account.ts:2](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Account.ts#L2)
+[types/Account.ts:2](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Account.ts#L2)
 
 # Interface: Steam
 
@@ -338,7 +338,7 @@ ___
 
 #### Defined in
 
-[types/Steam.ts:9](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Steam.ts#L9)
+[types/Steam.ts:9](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Steam.ts#L9)
 
 ___
 
@@ -348,7 +348,7 @@ ___
 
 #### Defined in
 
-[types/Steam.ts:10](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Steam.ts#L10)
+[types/Steam.ts:10](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Steam.ts#L10)
 
 ___
 
@@ -358,7 +358,7 @@ ___
 
 #### Defined in
 
-[types/Steam.ts:11](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Steam.ts#L11)
+[types/Steam.ts:11](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Steam.ts#L11)
 
 ___
 
@@ -368,7 +368,7 @@ ___
 
 #### Defined in
 
-[types/Steam.ts:12](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Steam.ts#L12)
+[types/Steam.ts:12](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Steam.ts#L12)
 
 ___
 
@@ -378,4 +378,4 @@ ___
 
 #### Defined in
 
-[types/Steam.ts:8](https://github.com/vladislav-puzyrev/steam-robot/blob/1612afd/src/types/Steam.ts#L8)
+[types/Steam.ts:8](https://github.com/vladislav-puzyrev/steam-robot/blob/9c2ec19/src/types/Steam.ts#L8)
