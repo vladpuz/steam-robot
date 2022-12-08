@@ -4,8 +4,8 @@ import SteamUser from 'steam-user'
 import SteamCommunity from 'steamcommunity'
 import SteamTradeOfferManager from 'steam-tradeoffer-manager'
 import SteamMarket from 'steam-market'
-import { Account } from './types/Account'
-import { Middleware } from './types/Middleware'
+import { Account } from './types/Account.js'
+import { Middleware } from './types/Middleware.js'
 
 class SteamRobot<AccountOptions = void> {
   private readonly account: Account<AccountOptions>

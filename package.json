@@ -9,6 +9,7 @@
   ],
   "license": "MIT",
   "author": "Vladislav Puzyrev",
+  "type": "module",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "repository": {
@@ -34,7 +35,7 @@
     "@types/steam-user": "^4.26.0",
     "@types/steamcommunity": "^3.43.2",
     "request": "^2.88.2",
-    "steam-market": "^1.0.0",
+    "steam-market": "^2.0.0",
     "steam-totp": "^2.1.2",
     "steam-tradeoffer-manager": "^2.10.5",
     "steam-user": "^4.26.0",

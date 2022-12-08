@@ -1,5 +1,5 @@
-import { Steam } from './Steam'
-import { Account } from './Account'
+import { Steam } from './Steam.js'
+import { Account } from './Account.js'
 
 export type Middleware<AccountOptions = void> = (
   steam: Steam,

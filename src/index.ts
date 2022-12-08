@@ -1,6 +1,6 @@
-import SteamRobot from './SteamRobot'
+import SteamRobot from './SteamRobot.js'
 
-export { Steam } from './types/Steam'
-export { Account } from './types/Account'
-export { Middleware } from './types/Middleware'
+export { Steam } from './types/Steam.js'
+export { Account } from './types/Account.js'
+export { Middleware } from './types/Middleware.js'
 export default SteamRobot
