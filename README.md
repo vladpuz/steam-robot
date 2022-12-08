@@ -1,6 +1,7 @@
 # steam-robot
 
-Creating steam bots based on middlewares, which are infinitely called at a given interval.
+Creating steam bots based on middlewares, which are infinitely called at a given interval. Useful when creating
+endlessly running bots.
 
 ## Install
 
