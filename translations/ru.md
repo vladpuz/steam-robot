@@ -54,7 +54,8 @@ bot.use(async (steam, account, next) => {
 })
 
 // Запуск с интервалом 60000мс
-await bot.start(60000)
+// Второй параметр опционален, он вызывается единоразово перед запуском middlewares
+await bot.start(60000, async (steam, account) => {})
 ```
 
 ## Смотрите также
