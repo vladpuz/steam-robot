@@ -29,37 +29,32 @@ const account = {
   proxy: 'protocol://username:password@host:port'
 }
 
-// Wrapping the code in an asynchronous function to use await
-const main = async () => {
-  const bot = new SteamRobot(account)
+const bot = new SteamRobot(account)
 
-  bot.use(async (steam, account, next) => {
-    console.log('First middleware')
+bot.use(async (steam, account, next) => {
+  console.log('First middleware')
 
-    // The steam object contains:
-    // - totp (steam-totp)
-    // - client (steam-user)
-    // - community (steamcommunity)
-    // - manager (steam-tradeoffer-manager)
-    // - market (steam-market)
+  // The steam object contains:
+  // - totp (steam-totp)
+  // - client (steam-user)
+  // - community (steamcommunity)
+  // - manager (steam-tradeoffer-manager)
+  // - market (steam-market)
 
-    // The account object is a copy of the bot creation object
-    // You can specify your own account.options and get them inside middleware
+  // The account object is a copy of the bot creation object
+  // You can specify your own account.options and get them inside middleware
 
-    // Call to move to the next middlware
-    await next()
-  })
+  // Call to move to the next middlware
+  await next()
+})
 
-  bot.use(async (steam, account, next) => {
-    console.log('Second middleware')
-    await next()
-  })
+bot.use(async (steam, account, next) => {
+  console.log('Second middleware')
+  await next()
+})
 
-  // Start with an interval of 60000ms
-  await bot.start(60000)
-}
-
-main()
+// Start with an interval of 60000ms
+await bot.start(60000)
 ```
 
 ## See also
