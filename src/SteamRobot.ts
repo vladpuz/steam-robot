@@ -6,7 +6,7 @@ import SteamTradeOfferManager from 'steam-tradeoffer-manager'
 import SteamMarket from 'steam-market'
 import { Account } from './types/Account.js'
 import { Middleware } from './types/Middleware.js'
-import { HandleStart } from './types/HandleStart.js'
+import { Starter } from './types/Starter.js'
 
 class SteamRobot<AccountOptions = void> {
   private readonly account: Account<AccountOptions>
@@ -20,7 +20,7 @@ class SteamRobot<AccountOptions = void> {
     this.middlewares.push(middleware)
   }
 
-  public async start (interval: number, handleStart?: HandleStart<AccountOptions> | null): Promise<void> {
+  public async start (interval: number, starter?: Starter<AccountOptions> | null): Promise<void> {
     const protocol = this.account.proxy?.split('://')[0] ?? ''
     const isHttp = protocol.startsWith('http')
     const isSocks = protocol.startsWith('socks')
@@ -107,8 +107,8 @@ class SteamRobot<AccountOptions = void> {
       setTimeout(callMiddlewares as () => void, interval)
     }
 
-    if (handleStart != null) {
-      await handleStart(steam, this.account)
+    if (starter != null) {
+      await starter(steam, this.account)
     }
 
     setTimeout(callMiddlewares as () => void)
