@@ -29,7 +29,6 @@
     "test:eslint": "eslint ."
   },
   "dependencies": {
-    "@types/node": "^18.11.15",
     "@types/request": "^2.48.8",
     "@types/steam-totp": "^2.1.0",
     "@types/steam-user": "^4.26.0",
