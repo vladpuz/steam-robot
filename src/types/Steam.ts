@@ -1,8 +1,8 @@
-import SteamTotp from 'steam-totp'
-import SteamUser from 'steam-user'
-import SteamCommunity from 'steamcommunity'
-import SteamTradeOfferManager from 'steam-tradeoffer-manager'
-import SteamMarket from 'steam-market'
+import type SteamTotp from 'steam-totp'
+import type SteamUser from 'steam-user'
+import type SteamCommunity from 'steamcommunity'
+import type SteamTradeOfferManager from 'steam-tradeoffer-manager'
+import type SteamMarket from 'steam-market'
 
 export interface Steam {
   totp: typeof SteamTotp

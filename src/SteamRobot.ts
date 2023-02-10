@@ -1,12 +1,12 @@
-import request, { Request } from 'request'
+import request, { type Request } from 'request'
 import SteamTotp from 'steam-totp'
 import SteamUser from 'steam-user'
 import SteamCommunity from 'steamcommunity'
 import SteamTradeOfferManager from 'steam-tradeoffer-manager'
 import SteamMarket from 'steam-market'
-import { Account } from './types/Account.js'
-import { Middleware } from './types/Middleware.js'
-import { Starter } from './types/Starter.js'
+import { type Account } from './types/Account.js'
+import { type Middleware } from './types/Middleware.js'
+import { type Starter } from './types/Starter.js'
 
 class SteamRobot<AccountOptions = void> {
   private readonly account: Account<AccountOptions>
