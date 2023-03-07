@@ -1,33 +1,33 @@
 {
   "name": "steam-robot",
-  "version": "2.1.0",
-  "description": "Creating steam bots based on middlewares",
+  "version": "3.0.0",
+  "description": "Creating Steam bots based on middlewares",
   "keywords": [
     "steam",
     "bot",
     "middlewares"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vladislav-puzyrev/steam-robot.git"
+  },
   "license": "MIT",
   "author": "Vladislav Puzyrev",
   "type": "module",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vladislav-puzyrev/steam-robot.git"
-  },
   "scripts": {
     "build": "yarn run clean:build && tsc",
-    "docs": "yarn run clean:docs && yarn run docs:pull && yarn run docs:typedoc && yarn run docs:push",
-    "docs:pull": "git clone https://github.com/vladislav-puzyrev/steam-robot.wiki.git docs && rimraf docs/!(.git)",
-    "docs:typedoc": "typedoc --theme github-wiki --excludePrivate --githubPages false --cleanOutputDir false src/index.ts",
-    "docs:push": "cd docs && git add . && git diff-index --quiet HEAD || git commit -m TypeDoc && git push",
     "clean": "yarn run clean:build && yarn run clean:docs",
     "clean:build": "rimraf build",
     "clean:docs": "rimraf docs",
-    "test": "yarn run test:typescript && yarn run test:eslint",
-    "test:typescript": "tsc --noEmit",
-    "test:eslint": "eslint ."
+    "docs": "yarn run clean:docs && yarn run docs:pull && yarn run docs:typedoc && yarn run docs:push",
+    "docs:pull": "git clone https://github.com/vladislav-puzyrev/steam-robot.wiki.git docs && rimraf docs/!(.git)",
+    "docs:push": "cd docs && git add . && git diff-index --quiet HEAD || git commit -m TypeDoc && git push",
+    "docs:typedoc": "typedoc --theme github-wiki --excludePrivate --githubPages false --cleanOutputDir false src/index.ts",
+    "verify": "yarn run verify:types && yarn run verify:lint",
+    "verify:lint": "eslint .",
+    "verify:types": "tsc --noEmit"
   },
   "dependencies": {
     "@types/request": "^2.48.8",
@@ -35,22 +35,22 @@
     "@types/steam-user": "^4.26.1",
     "@types/steamcommunity": "^3.43.2",
     "request": "^2.88.2",
-    "steam-market": "^2.0.0",
+    "steam-market": "^3.0.0",
     "steam-totp": "^2.1.2",
     "steam-tradeoffer-manager": "^2.10.5",
-    "steam-user": "^4.27.0",
+    "steam-user": "^4.27.1",
     "steamcommunity": "^3.44.3"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
-    "eslint": "^8.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.35.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
-    "rimraf": "^4.1.2",
-    "typedoc": "^0.23.24",
+    "rimraf": "^4.3.1",
+    "typedoc": "^0.23.26",
     "typedoc-github-wiki-theme": "^1.0.1",
     "typedoc-plugin-markdown": "^3.14.0",
     "typescript": "^4.9.5"
