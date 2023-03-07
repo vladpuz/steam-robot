@@ -2,25 +2,28 @@ import request, { type Request } from 'request'
 import SteamTotp from 'steam-totp'
 import SteamUser from 'steam-user'
 import SteamCommunity from 'steamcommunity'
+// @ts-expect-error import
 import SteamTradeOfferManager from 'steam-tradeoffer-manager'
 import SteamMarket from 'steam-market'
 import { type Account } from './types/Account.js'
 import { type Middleware } from './types/Middleware.js'
-import { type Starter } from './types/Starter.js'
+import { type Steam } from './types/Steam.js'
 
-class SteamRobot<AccountOptions = void> {
-  private readonly account: Account<AccountOptions>
-  private readonly middlewares: Array<Middleware<AccountOptions>> = []
+class SteamRobot<T = Record<string, unknown>> {
+  private timer: ReturnType<typeof setTimeout> | null = null
+  private steam: Steam | null = null
+  private readonly middlewares: Array<Middleware<T>> = []
+  private readonly account: Account<T>
 
-  public constructor (account: Account<AccountOptions>) {
+  public constructor (account: Account<T>) {
     this.account = account
   }
 
-  public use (middleware: Middleware<AccountOptions>): void {
+  public use (middleware: Middleware<T>): void {
     this.middlewares.push(middleware)
   }
 
-  public async start (interval: number, starter?: Starter<AccountOptions> | null): Promise<void> {
+  public async start (delay?: number | null): Promise<Steam> {
     const protocol = this.account.proxy?.split('://')[0] ?? ''
     const isHttp = protocol.startsWith('http')
     const isSocks = protocol.startsWith('socks')
@@ -90,7 +93,13 @@ class SteamRobot<AccountOptions = void> {
       market
     }
 
+    this.steam = steam
+
     const callMiddlewares = async (): Promise<void> => {
+      if (this.middlewares.length === 0) {
+        return
+      }
+
       let index = 0
 
       const next = async (): Promise<void> => {
@@ -104,14 +113,24 @@ class SteamRobot<AccountOptions = void> {
       }
 
       await this.middlewares[index](steam, this.account, next)
-      setTimeout(callMiddlewares as () => void, interval)
-    }
-
-    if (starter != null) {
-      await starter(steam, this.account)
+      this.timer = setTimeout(callMiddlewares as () => void, delay ?? 60 * 1000)
     }
 
     setTimeout(callMiddlewares as () => void)
+    return steam
+  }
+
+  public stop (): void {
+    if (this.timer != null) {
+      clearTimeout(this.timer)
+      this.timer = null
+    }
+
+    if (this.steam != null) {
+      this.steam.client.logOff()
+      this.steam.manager.shutdown()
+      this.steam = null
+    }
   }
 }
 

@@ -1,8 +1,8 @@
 import { type Steam } from './Steam.js'
 import { type Account } from './Account.js'
 
-export type Middleware<AccountOptions = void> = (
+export type Middleware<T = Record<string, unknown>> = (
   steam: Steam,
-  account: Account<AccountOptions>,
+  account: Account<T>,
   next: () => Promise<void>
 ) => Promise<void>
