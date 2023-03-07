@@ -1,26 +1,38 @@
 # steam-robot
 
-Creating steam bots based on middlewares, which are infinitely called at a given interval. Useful when creating
-endlessly running bots.
+Creating Steam bots based on middlewares, that are called indefinitely for a given delay. Internally he uses
+modules from the [See also](#see-also) section.
 
-TypeDoc documentation is available on [wiki](https://github.com/vladislav-puzyrev/steam-robot/wiki)
+TypeDoc documentation is available on [wiki](https://github.com/vladislav-puzyrev/steam-robot/wiki).
 
 ## Install
+
+Using npm:
 
 ```bash
 npm install steam-robot
 ```
 
+Using yarn:
+
+```bash
+yarn add steam-robot
+```
+
 ## Usage
+
+### Middlewares style
 
 ```javascript
 import SteamRobot from 'steam-robot'
 
 // Account object for creating a bot
 const account = {
+  // Required properties
   username: 'username',
   password: 'password',
   sharedSecret: 'sharedSecret',
+  // Optional properties
   identitySecret: 'identitySecret',
   options: {
     key: 'You can specify additional options'
@@ -28,7 +40,7 @@ const account = {
   headers: {
     key: 'You can specify additional headers'
   },
-  proxy: 'protocol://username:password@host:port'
+  proxy: null // Format protocol://username:password@host:port
 }
 
 const bot = new SteamRobot(account)
@@ -55,18 +67,62 @@ bot.use(async (steam, account, next) => {
   await next()
 })
 
-// Start with an interval of 60000ms
-// The second parameter is optional, it is called once before starting middlewares
-await bot.start(60000, async (steam, account) => {})
+// Run at 60 seconds interval (default)
+await bot.start(60 * 1000)
+
+// Stop middlewares and exit Steam
+bot.stop()
+```
+
+### Manual style
+
+```javascript
+import SteamRobot from 'steam-robot'
+
+// Account object for creating a bot
+const account = {
+  // Required properties
+  username: 'username',
+  password: 'password',
+  sharedSecret: 'sharedSecret',
+  // Optional properties
+  identitySecret: 'identitySecret',
+  options: {
+    key: 'You can specify additional options'
+  },
+  headers: {
+    key: 'You can specify additional headers'
+  },
+  proxy: null // Format protocol://username:password@host:port
+}
+
+const bot = new SteamRobot(account)
+
+// You can work with the Steam object directly without using use()
+const steam = await bot.start()
+
+// The steam object contains:
+// - totp (steam-totp)
+// - client (steam-user)
+// - community (steamcommunity)
+// - manager (steam-tradeoffer-manager)
+// - market (steam-market)
+
+// An example of using the steam object
+const search = await steam.market.search(730)
+console.log('search', search.success)
+
+// Exit Steam
+bot.stop()
 ```
 
 ## See also
 
-| Modules                                                                                  | Description                              | Author            |
-|------------------------------------------------------------------------------------------|------------------------------------------|-------------------|
-| [steam-totp](https://github.com/DoctorMcKay/node-steam-totp)                             | Generating TOTP auth codes for steam     | DoctorMcKay       |
-| [steam-user](https://github.com/DoctorMcKay/node-steam-user)                             | Interaction with the steam network       | DoctorMcKay       |
-| [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Interaction with the steam community     | DoctorMcKay       |
-| [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Steam trade offer management             | DoctorMcKay       |
-| [steam-market](https://github.com/vladislav-puzyrev/steam-market)                        | Steam community market API client        | Vladislav Puzyrev |
-| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot) (YOU HERE)               | Creating steam bots based on middlewares | Vladislav Puzyrev |
+| Module                                                                                   | Description                                                             | Author            |
+|------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|-------------------|
+| [steam-totp](https://github.com/DoctorMcKay/node-steam-totp)                             | Lightweight module to generate Steam-style TOTP auth codes              | DoctorMcKay       |
+| [steam-user](https://github.com/DoctorMcKay/node-steam-user)                             | Allows interaction with the Steam network via the Steam client protocol | DoctorMcKay       |
+| [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Interact with various interfaces on Steam Community from Node.js        | DoctorMcKay       |
+| [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Simple and sane Steam trade offer management                            | DoctorMcKay       |
+| [steam-market](https://github.com/vladislav-puzyrev/steam-market)                        | Steam market API client                                                 | Vladislav Puzyrev |
+| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot) (YOU HERE)               | Creating Steam bots based on middlewares                                | Vladislav Puzyrev |
