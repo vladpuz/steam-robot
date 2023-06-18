@@ -1,7 +1,7 @@
 {
   "name": "steam-robot",
   "version": "3.0.0",
-  "description": "Creating Steam bots based on middlewares",
+  "description": "Steam bots creating based on middlewares",
   "keywords": [
     "steam",
     "bot",
@@ -17,42 +17,37 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
-    "build": "yarn run clean:build && tsc",
-    "clean": "yarn run clean:build && yarn run clean:docs",
+    "build": "npm run clean:build && tsc",
+    "clean": "npm run clean:build && npm run clean:docs",
     "clean:build": "rimraf build",
     "clean:docs": "rimraf docs",
-    "docs": "yarn run clean:docs && yarn run docs:pull && yarn run docs:typedoc && yarn run docs:push",
+    "docs": "npm run clean:docs && npm run docs:pull && npm run docs:typedoc && npm run docs:push",
     "docs:pull": "git clone https://github.com/vladislav-puzyrev/steam-robot.wiki.git docs && rimraf docs/!(.git)",
     "docs:push": "cd docs && git add . && git diff-index --quiet HEAD || git commit -m TypeDoc && git push",
     "docs:typedoc": "typedoc --theme github-wiki --excludePrivate --githubPages false --cleanOutputDir false src/index.ts",
-    "verify": "yarn run verify:types && yarn run verify:lint",
+    "verify": "npm run verify:types && npm run verify:lint",
     "verify:lint": "eslint .",
     "verify:types": "tsc --noEmit"
   },
   "dependencies": {
     "@types/request": "^2.48.8",
     "@types/steam-totp": "^2.1.0",
-    "@types/steam-user": "^4.26.1",
+    "@types/steam-user": "^4.26.4",
     "@types/steamcommunity": "^3.43.2",
     "request": "^2.88.2",
-    "steam-market": "^3.0.0",
+    "steam-market": "^3.0.2",
     "steam-totp": "^2.1.2",
     "steam-tradeoffer-manager": "^2.10.5",
-    "steam-user": "^4.27.1",
-    "steamcommunity": "^3.44.3"
+    "steam-user": "^4.28.6",
+    "steamcommunity": "^3.45.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
-    "eslint": "^8.35.0",
-    "eslint-config-standard-with-typescript": "^34.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-promise": "^6.1.1",
-    "rimraf": "^4.3.1",
-    "typedoc": "^0.23.26",
-    "typedoc-github-wiki-theme": "^1.0.1",
-    "typedoc-plugin-markdown": "^3.14.0",
-    "typescript": "^4.9.5"
+    "eslint": "^8.43.0",
+    "eslint-config-standard-with-typescript": "^35.0.0",
+    "rimraf": "^5.0.1",
+    "typedoc": "^0.24.8",
+    "typedoc-github-wiki-theme": "^1.1.0",
+    "typedoc-plugin-markdown": "^3.15.3",
+    "typescript": "^5.1.3"
   }
 }

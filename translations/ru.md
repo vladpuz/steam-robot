@@ -7,16 +7,8 @@ TypeDoc документация доступна на [wiki](https://github.com
 
 ## Установка
 
-Используя npm:
-
 ```bash
 npm install steam-robot
-```
-
-Используя yarn:
-
-```bash
-yarn add steam-robot
 ```
 
 ## Использование

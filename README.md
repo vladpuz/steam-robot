@@ -1,22 +1,14 @@
 # steam-robot
 
-Creating Steam bots based on middlewares, that are called indefinitely for a given delay. Internally he uses
+Steam bots creating based on middlewares, that are called indefinitely for a given delay. Internally he uses
 modules from the [See also](#see-also) section.
 
 TypeDoc documentation is available on [wiki](https://github.com/vladislav-puzyrev/steam-robot/wiki).
 
 ## Install
 
-Using npm:
-
 ```bash
 npm install steam-robot
-```
-
-Using yarn:
-
-```bash
-yarn add steam-robot
 ```
 
 ## Usage
@@ -125,4 +117,4 @@ bot.stop()
 | [steamcommunity](https://github.com/DoctorMcKay/node-steamcommunity)                     | Interact with various interfaces on Steam Community from Node.js        | DoctorMcKay       |
 | [steam-tradeoffer-manager](https://github.com/DoctorMcKay/node-steam-tradeoffer-manager) | Simple and sane Steam trade offer management                            | DoctorMcKay       |
 | [steam-market](https://github.com/vladislav-puzyrev/steam-market)                        | Steam market API client                                                 | Vladislav Puzyrev |
-| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot) (YOU HERE)               | Creating Steam bots based on middlewares                                | Vladislav Puzyrev |
+| [steam-robot](https://github.com/vladislav-puzyrev/steam-robot) (YOU HERE)               | Steam bots creating based on middlewares                                | Vladislav Puzyrev |
